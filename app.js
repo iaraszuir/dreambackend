@@ -6,7 +6,10 @@ const express = require('express');
 const app = express();
 
 //TODO:Configuracion de los manejadores
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+app.use(require('./routes'));
 
 //La preparamps para exportarla
 module.exports = app
